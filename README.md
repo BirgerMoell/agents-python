@@ -1,5 +1,7 @@
 # Polymath Agent Python
 
+README hero infographic prompt: [docs/infographic-prompt.md](docs/infographic-prompt.md)
+
 Polymath Agent Python is a course-ready Python copy of
 [`BirgerMoell/agents`](https://github.com/BirgerMoell/agents). The original project is a compact
 TypeScript agent that uses the OpenAI Responses API, function tools, and local Agent Skills. This
@@ -144,6 +146,7 @@ See [docs/skills.md](docs/skills.md) and [.skills/README.md](.skills/README.md).
 ## Documentation Index
 
 - [Architecture](docs/architecture.md)
+- [README Hero Infographic Prompt](docs/infographic-prompt.md)
 - [Tool Contracts](docs/tools.md)
 - [Agent Skills](docs/skills.md)
 - [Security Notes](docs/security.md)

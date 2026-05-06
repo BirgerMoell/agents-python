@@ -3,6 +3,7 @@
 This folder contains the supporting material that explains the codebase from multiple angles.
 
 - `architecture.md` explains the request/tool/response loop.
+- `infographic-prompt.md` provides a ready-to-use README hero infographic prompt.
 - `tools.md` documents every tool exposed to the model.
 - `skills.md` describes the Agent Skills format and lifecycle.
 - `security.md` explains the local safety model and known risks.
