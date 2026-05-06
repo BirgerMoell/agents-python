@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Polymath Agent Python is a transparent OpenAI Responses API agent with local tools, Agent Skills, memory, tests, and documentation."
+    />
+    <meta property="og:title" content="Polymath Agent Python" />
+    <meta
+      property="og:description"
+      content="A readable, tested Python implementation of a tool-using OpenAI agent."
+    />
+    <meta property="og:image" content="assets/polymath-agent-infographic.png" />
+    <title>Polymath Agent Python</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Polymath Agent Python home">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>Polymath Agent Python</span>
+      </a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#loop">Loop</a>
+        <a href="#tools">Tools</a>
+        <a href="#quality">Quality</a>
+        <a href="https://github.com/BirgerMoell/agents-python">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img
+          class="hero-image"
+          src="assets/polymath-agent-infographic.png"
+          alt="Architecture infographic showing the Polymath Agent Python tool loop"
+        />
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Readable agent engineering</p>
+          <h1 id="hero-title">A Python agent you can actually understand.</h1>
+          <p class="hero-text">
+            Polymath Agent Python exposes the real Responses API tool loop, local tools, Agent
+            Skills, memory, heartbeat status, tests, and documentation.
+          </p>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="https://github.com/BirgerMoell/agents-python">
+              View on GitHub
+            </a>
+            <a class="button button-secondary" href="#start">Run locally</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro section-grid reveal" id="loop" aria-labelledby="loop-title">
+        <div>
+          <p class="eyebrow">The loop</p>
+          <h2 id="loop-title">One model turn, many visible steps.</h2>
+        </div>
+        <p>
+          The model asks for a function call, Python executes it through the ToolRegistry, and the
+          result returns as function_call_output until the model has enough context to answer.
+        </p>
+      </section>
+
+      <section class="flow" aria-label="Agent loop steps">
+        <ol class="flow-line">
+          <li class="reveal">
+            <span>01</span>
+            <strong>User prompt</strong>
+            <p>A question enters through the CLI in one-shot or chat mode.</p>
+          </li>
+          <li class="reveal">
+            <span>02</span>
+            <strong>Responses API</strong>
+            <p>The model receives instructions, schemas, and the current user input.</p>
+          </li>
+          <li class="reveal">
+            <span>03</span>
+            <strong>ToolRegistry</strong>
+            <p>Strict tool names and JSON arguments route to local Python functions.</p>
+          </li>
+          <li class="reveal">
+            <span>04</span>
+            <strong>Final answer</strong>
+            <p>The loop continues until the model returns normal assistant text.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="artifact reveal" aria-labelledby="artifact-title">
+        <div class="artifact-copy">
+          <p class="eyebrow">Architecture at a glance</p>
+          <h2 id="artifact-title">The README hero is the map.</h2>
+          <p>
+            The infographic shows the package modules, execution flow, safety boundaries, tests,
+            and on-demand skill loading in one inspectable picture.
+          </p>
+        </div>
+        <a
+          class="artifact-image-link"
+          href="assets/polymath-agent-infographic.png"
+          aria-label="Open full-size Polymath Agent Python infographic"
+        >
+          <img
+            src="assets/polymath-agent-infographic.png"
+            alt="Full Polymath Agent Python architecture infographic"
+          />
+        </a>
+      </section>
+
+      <section class="toolscape" id="tools" aria-labelledby="tools-title">
+        <div class="section-grid reveal">
+          <div>
+            <p class="eyebrow">Local capabilities</p>
+            <h2 id="tools-title">Small tools with clear boundaries.</h2>
+          </div>
+          <p>
+            The agent can inspect projects, search source, fetch public pages, load skills, and
+            keep explicit memories while preserving readable Python seams.
+          </p>
+        </div>
+        <div class="tool-list" aria-label="Agent capabilities">
+          <div class="tool-item reveal">
+            <span>Read</span>
+            <strong>Workspace files</strong>
+            <p>Path-safe file reads and directory listings stay inside the configured workspace.</p>
+          </div>
+          <div class="tool-item reveal">
+            <span>Search</span>
+            <strong>Codebase context</strong>
+            <p>Regex search skips generated directories and returns concise file-line matches.</p>
+          </div>
+          <div class="tool-item reveal">
+            <span>Skill</span>
+            <strong>Agent Skills</strong>
+            <p>Skill metadata is visible up front; full instructions load only when relevant.</p>
+          </div>
+          <div class="tool-item reveal">
+            <span>State</span>
+            <strong>Memory and heartbeat</strong>
+            <p>Plain JSON files make local state easy to inspect during coursework.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="quality" id="quality" aria-labelledby="quality-title">
+        <div class="quality-copy reveal">
+          <p class="eyebrow">Course-ready</p>
+          <h2 id="quality-title">Built to be read, tested, and defended.</h2>
+          <p>
+            The deterministic test suite uses a fake OpenAI client, while the live smoke test checks
+            the real model-tool loop when credentials are available.
+          </p>
+        </div>
+        <div class="checks" aria-label="Validation checks">
+          <div class="check reveal">
+            <span>pytest</span>
+            <strong>Fake-client tests</strong>
+          </div>
+          <div class="check reveal">
+            <span>Ruff</span>
+            <strong>Linted source</strong>
+          </div>
+          <div class="check reveal">
+            <span>mypy</span>
+            <strong>Typed modules</strong>
+          </div>
+          <div class="check reveal">
+            <span>Smoke</span>
+            <strong>Live tool round</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="start" id="start" aria-labelledby="start-title">
+        <div class="start-copy reveal">
+          <p class="eyebrow">Run it</p>
+          <h2 id="start-title">Clone, install, test, chat.</h2>
+        </div>
+        <pre class="terminal reveal" aria-label="Setup commands"><code>git clone https://github.com/BirgerMoell/agents-python
+cd agents-python
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[dev]"
+python -m pytest
+polymath-agent</code></pre>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Polymath Agent Python</span>
+      <a href="https://github.com/BirgerMoell/agents-python">GitHub repository</a>
+    </footer>
+
+    <script src="site.js"></script>
+  </body>
+</html>

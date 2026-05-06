@@ -1,6 +1,6 @@
 # Polymath Agent Python
 
-README hero infographic prompt: [docs/infographic-prompt.md](docs/infographic-prompt.md)
+![Polymath Agent Python architecture infographic](docs/assets/polymath-agent-infographic.png)
 
 Polymath Agent Python is a course-ready Python copy of
 [`BirgerMoell/agents`](https://github.com/BirgerMoell/agents). The original project is a compact
