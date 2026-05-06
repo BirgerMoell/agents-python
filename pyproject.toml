@@ -42,7 +42,7 @@ python_version = "3.9"
 strict = true
 warn_return_any = true
 warn_unused_configs = true
-files = ["src", "tests"]
+files = ["src", "tests", "scripts"]
 
 [tool.pytest.ini_options]
 addopts = "-q"

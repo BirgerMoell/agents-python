@@ -13,7 +13,7 @@ python -m pip install -e ".[dev]"
 ```bash
 python -m pytest
 python -m ruff check .
-python -m mypy src tests
+python -m mypy src tests scripts
 ```
 
 Tests use a fake OpenAI client and do not require `OPENAI_API_KEY`.
@@ -31,6 +31,16 @@ Then try an interactive session:
 ```bash
 polymath-agent
 ```
+
+For an automated live smoke test:
+
+```bash
+PYTHONPATH=src python scripts/live_smoke.py
+```
+
+This checks the real OpenAI request/tool-output/request loop and exits non-zero if the model does
+not call a tool. It is not part of `pytest` because it requires credentials and makes a billable API
+call.
 
 ## Packaging
 

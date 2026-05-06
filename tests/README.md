@@ -15,5 +15,5 @@ For the full quality gate used during development:
 ```bash
 python -m pytest
 python -m ruff check .
-python -m mypy src tests
+python -m mypy src tests scripts
 ```

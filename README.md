@@ -56,8 +56,17 @@ Run tests:
 ```bash
 python -m pytest
 python -m ruff check .
-python -m mypy src tests
+python -m mypy src tests scripts
 ```
+
+Run a live end-to-end smoke test after setting `OPENAI_API_KEY`:
+
+```bash
+PYTHONPATH=src python scripts/live_smoke.py
+```
+
+The live smoke test makes one billable API call, asks the model to use `list_dir`, and fails if no
+tool call happens.
 
 ## Configuration
 
@@ -144,6 +153,7 @@ See [docs/skills.md](docs/skills.md) and [.skills/README.md](.skills/README.md).
 - [Tool Internals](src/polymath_agent/tools/README.md)
 - [Tests](tests/README.md)
 - [Examples](examples/README.md)
+- [Live smoke test](scripts/live_smoke.py)
 
 ## OpenAI References
 
