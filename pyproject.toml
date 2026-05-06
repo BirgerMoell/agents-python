@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "polymath-agent-python"
+version = "1.0.0"
+description = "A course-ready Python implementation of a small tool-using OpenAI agent with Agent Skills."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+  { name = "Birger Moell" }
+]
+dependencies = [
+  "openai>=2.0.0",
+  "python-dotenv>=1.0.1"
+]
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.14.0",
+  "pytest>=8.3.0",
+  "ruff>=0.9.0"
+]
+
+[project.scripts]
+polymath-agent = "polymath_agent.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/polymath_agent"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["UP006", "UP007", "UP035", "UP045"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
